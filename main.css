@@ -260,7 +260,7 @@ input::-webkit-inner-spin-button {
   bottom: 14%;
 }
 
-/* =================+==== hints display =======================*/
+/* ====================== hints display =======================*/
 
 #hint {
   /* visibility: hidden; */
@@ -287,4 +287,35 @@ input::-webkit-inner-spin-button {
 
 #hint.closed {
 	top: 50%
+}
+
+/* ====================== hints display =======================*/
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  min-width: 700px;
+}
+
+#fullstack-logo {
+  float: left;
+  margin-left: 5%;
+}
+
+#grace-hopper-logo {
+  float: right;
+  margin-right: 5%;
+  margin-top:4px;
+}
+
+#project-by {
+  position: absolute;
+  bottom: -1px;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  font-family: Arial;
+  color: darkgray;
 }
