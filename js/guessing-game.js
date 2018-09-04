@@ -210,19 +210,10 @@ class GameAltered {
 
         return this.checkGuess(num);
     }
-    provideHint() {
-        let notCalled = true;
-        let result;
-        let winningNumber = this.winningNumber;
-        return (function () {
-            if (notCalled) {
-                notCalled = false;
-                result = shuffle([winningNumber, generateWinningNumber(), generateWinningNumber()]);
-            }
-            return result;
-        })();
-    }
 
+    provideHint() {
+        return shuffle([this.winningNumber, generateWinningNumber(), generateWinningNumber()]);
+    }
 }
 
 function newGameAltered() {
@@ -309,8 +300,9 @@ if (document.getElementById('rest-button')) {
 }
 
 if (document.getElementById('hint-button')) {
+    let hints = game.provideHint();
     document.getElementById('hint-button').addEventListener('click', function () {
-        let hints = game.provideHint()
+        hints = shuffle(hints);
         document.getElementById('hint').classList.add('closed');
         document.querySelector('p').innerHTML = `The number is ${hints[0]}, ${hints[1]}, or ${hints[2]}`;
     });
