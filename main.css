@@ -1,10 +1,8 @@
-/* Write your CSS code in this file */
 *:focus {
   outline: none;
 }
 
 body {
-  /* background-image: url('tree-in-field-background-3.jpg'); */
   background: url('src/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -44,7 +42,8 @@ h2,
 input, 
 .guesses, 
 #rest-button, 
-#hint-button {
+#hint-button, 
+p {
   color: #3A5E7A;
   font-family: 'Cabin Sketch', serif;
   text-align: center;
@@ -223,4 +222,42 @@ p {
 .win-lose {
   color: red;
   font-weight: 700;
+}
+
+#hint {
+  /* visibility: hidden; */
+  position: absolute;
+  z-index: 5;
+  border-radius: 3px;
+  border: 2px solid #3A5E7A;
+  background-color: white;
+  height: 100px;
+  width: 400px;
+  /* top: 50%;
+  margin-top: -50px; */
+  left: 50%;
+  margin-left: -200px;
+}
+
+#hint p {
+  margin-top: 39px;
+  font-size: 18px;
+}
+
+#hint button {
+  float: right;
+  font-family: Arial;
+  color: #3A5E7A;
+}
+
+#hint {
+	top: -100px; 
+  margin-top: -50px;
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+#hint.closed {
+	top: 50%
 }

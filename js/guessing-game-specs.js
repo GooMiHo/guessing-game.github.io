@@ -175,7 +175,7 @@ describe('Game class', () => {
         game.provideHint();
         expect(generateWinningNumber.calls.count()).toBe(2);
       });
-      it('calls the shuffle function', function() {
+      it('calls the shuffle function', function () {
         spyOn(window, 'shuffle'); // note: in order to pass this spec, shuffle needs to be defined
         // with a function declaration, ex: function shuffle() {}
         game.provideHint();
