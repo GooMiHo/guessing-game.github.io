@@ -140,6 +140,8 @@ function hideOtherTemps() {
 
 //========================= Altered Code to Style Game ==========================
 
+let hints;
+
 class GameAltered {
     constructor() {
         this.playersGuess = null;
@@ -296,11 +298,12 @@ if (document.getElementById('rest-button')) {
         document.querySelector('h2').innerHTML = 'Guess a number between 1-100';
         document.getElementById('hint').classList.remove('closed');
         hideOtherTemps();
+        hints = game.provideHint();
     });
 }
 
 if (document.getElementById('hint-button')) {
-    let hints = game.provideHint();
+    hints = game.provideHint();
     document.getElementById('hint-button').addEventListener('click', function () {
         hints = shuffle(hints);
         document.getElementById('hint').classList.add('closed');

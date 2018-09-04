@@ -24,7 +24,7 @@
     <div id="game-holder">
       <h1>Play the Guessing Game!</h1>
       <h2>Guess a number between 1-100</h2> 
-      <input type="text" id="input" placeholder="#">
+      <input type="text" id="input" placeholder="#" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
       <div id="go-button-container">
         <button id="go-button">Go!</button>
@@ -46,3 +46,5 @@
   </body>
 
 </html>
+
+
