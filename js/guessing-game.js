@@ -314,3 +314,14 @@ if (document.getElementById('x-button')) {
         document.getElementById('hint').classList.remove('closed');
     });
 }
+
+
+
+
+
+
+
+
+
+
+

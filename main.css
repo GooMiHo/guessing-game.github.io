@@ -37,8 +37,12 @@ h2 {
 }
 
 ::placeholder {
-  color: #9FC2C9;;
+  color: #9FC2C9;
   text-indent: 9px;
+}
+
+#input:hover::-webkit-input-placeholder {
+  color: #B8D4DB;
 }
 
 #hint p {
@@ -167,6 +171,7 @@ p {
   background-color: #556E4B;
   border-color: #556E4B;
   border-style: groove;
+  border-width: 2px;
 }
 
 #go-button:hover, #rest-button:hover, #hint-button:hover {
@@ -214,10 +219,6 @@ input {
   margin-left: 250px;
   margin-top: 20px;
 }
-
-input:hover {
-  background-color: #f8f7ff;
-}  
 
 /* ===================== guesses display =======================*/
 
