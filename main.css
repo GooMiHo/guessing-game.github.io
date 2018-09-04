@@ -1,1 +1,226 @@
 /* Write your CSS code in this file */
+*:focus {
+  outline: none;
+}
+
+body {
+  /* background-image: url('tree-in-field-background-3.jpg'); */
+  background: url('src/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+}
+
+.cold-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#hot-back, #cold-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#hot-back {
+  visibility: hidden;
+  background-color: orange;
+  opacity: 0.2;
+}
+
+#cold-back {
+  visibility: hidden;
+  background-color: #7FB0E8;
+  opacity: 0.4;
+} 
+
+h1,
+h2,
+::placeholder,
+#go-button,
+input, 
+.guesses, 
+#rest-button, 
+#hint-button {
+  color: #3A5E7A;
+  font-family: 'Cabin Sketch', serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 9%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+::placeholder {
+  text-indent: 10px;
+}
+
+
+#game-holder,
+#transparent-back {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-left: -300px;
+}
+
+
+#game-holder,
+#transparent-back, 
+#centered-back {
+  
+  width: 600px; 
+  height: 80%;
+  min-height: 525px;
+  
+}
+
+#centered-back {
+  background-color: pink;
+  position: relative;
+  margin: auto;
+  
+}
+#transparent-back {
+  background-color: white;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+input {
+  height: 100px;
+  width: 100px;
+  background-color: #EAF1FF;
+  border-color: #556E4B;
+  border-width: 5px;
+  font-size: 65px;
+  text-align: center;
+  border-radius: 50%;
+  border-style: outset;
+  margin-left: 250px;
+  margin-top: 20px;
+}
+
+input:hover {
+  background-color: #f8f7ff;
+}  
+
+
+#go-button {
+  position: relative;
+  top: -39px;
+  left: 335px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#go-button, #rest-button, #hint-button {
+  color: #EAF1FF;
+  background-color: #556E4B;
+  border-color: #556E4B;
+  border-style: groove;
+}
+
+#go-button:hover, #rest-button:hover, #hint-button:hover {
+  background-color: #6A8A5E;
+  border-color: #6A8A5E;
+} 
+
+#rest-button, #hint-button {
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+#flames-large {
+  visibility: hidden;
+  position: fixed;
+  font-size: 600px;
+  bottom: -520px;
+  left: -60px;
+  font-family: Arial;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+  z-index: -1
+}
+
+
+.guesses {
+  padding: 20px;
+  background-color: #EAF1FF;
+  border: 3px, solid #556E4B;
+  font-size: 40px;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 3px solid #556E4B;
+}
+
+.guesses:not(:last-child) {
+  margin-right: 20px;
+}
+
+p {
+  text-align: center;
+}
+
+#guesses-container {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 14%;
+}
+
+#buttons-container {
+  position: absolute;
+  left: 50%;
+  top: 92%;
+  width: 150px;
+  margin-left: -75px;
+}
+
+#rest-button {
+  float: left;
+}
+
+#hint-button {
+  float: right;
+}
+
+#lukewarm {
+  color: #7A2A57;
+}
+
+#chilly {
+  color: #0D9BB5;
+}
+
+#firstFrost {
+  visibility: hidden;
+}
+
+#secondFrost {
+  visibility: hidden;
+}
+
+#thirdFrost {
+  visibility: hidden;
+}
+
+.win-lose {
+  color: red;
+  font-weight: 700;
+}
