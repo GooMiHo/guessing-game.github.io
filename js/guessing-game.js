@@ -167,7 +167,7 @@ class GameAltered {
             return '<span class="win-lose">You Win!</span>';
         }
         else if (this.guessCount > 4) {
-            return '<span class="win-lose">You Lose.</span>'
+            return `<span class="win-lose">You Lose.</span> The number was ${this.winningNumber}.`;
         }
         else if (this.pastGuesses.includes(num)) {
             return 'You have already guessed that number.'
@@ -181,25 +181,34 @@ class GameAltered {
         }
     }
     howClose() {
+        let guessUpdate = '';
+
+        if (game.isLower()) {
+            guessUpdate = ' Guess higher.';
+        }
+        else {
+            guessUpdate = ' Guess lower.';
+        }
+
         if (this.difference() < 10) {
             hideOtherTemps();
             letLargeFlamesAppear();
-            return 'You\'re <span class="font-effect-fire-animation">burning up!</span>';
+            return `You\'re <span class="font-effect-fire-animation">burning up!</span>${guessUpdate}`;
         }
         else if (this.difference() < 25) {
             hideOtherTemps();
             getWarmer();
-            return 'You\'re <span id="lukewarm">lukewarm</span>.';
+            return `You\'re <span id="lukewarm">lukewarm</span>.${guessUpdate}`;
         }
         else if (this.difference() < 50) {
             hideOtherTemps();
             getCooler()
-            return 'You\'re a<span id="chilly"> bit chilly</span>.';
+            return `You\'re a<span id="chilly"> bit chilly</span>.${guessUpdate}`;
         }
         else if (this.difference() < 100) {
             hideOtherTemps();
             letFrostAppear();
-            return 'You\'re <span class="font-effect-ice" id="ice-cold">ice cold!</span>';
+            return `You\'re <span class="font-effect-ice" id="ice-cold">ice cold!</span>${guessUpdate}`;
         }
     }
 
@@ -256,23 +265,8 @@ function onClickGoOrEnter() {
     }
     let message = document.getElementsByTagName('h2');
     let inputNumber = Number(document.querySelector('input').value);
-    console.log(inputNumber)
     let newMessage = game.playersGuessSubmission(inputNumber);
-
     let guessUpdate = '';
-
-    if (game.guessCount < 5 && inputNumber !== game.winningNumber && newMessage !== 'You have already guessed that number.' && newMessage !== 'That is an invalid guess.') {
-        if (game.isLower()) {
-            guessUpdate = 'Guess higher.';
-        }
-        else {
-            guessUpdate = 'Guess lower.';
-        }
-    }
-    else if (newMessage === 'You Lose.') {
-        guessUpdate = `The number was ${game.winningNumber}`
-    }
-
     addGuess(inputNumber, newMessage);
     message[0].innerHTML = `${newMessage} ${guessUpdate}`;
     document.querySelector('input').value = '';
