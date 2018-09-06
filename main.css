@@ -294,9 +294,8 @@ input::-webkit-inner-spin-button {
 #hint {
 	top: -100px; 
   margin-top: -50px;
-	transition-property: all;
 	transition-duration: 1s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
 }
 
 #hint.closed {
