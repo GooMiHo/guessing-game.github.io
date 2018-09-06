@@ -277,7 +277,6 @@ input::-webkit-inner-spin-button {
 /* ====================== hints display =======================*/
 
 #hint {
-  /* visibility: hidden; */
   position: absolute;
   z-index: 5;
   border-radius: 3px;
@@ -285,17 +284,12 @@ input::-webkit-inner-spin-button {
   background-color: white;
   height: 100px;
   width: 400px;
-  /* top: 50%;
-  margin-top: -50px; */
   left: 50%;
   margin-left: -200px;
-}
-
-#hint {
-	top: -100px; 
+  top: -100px; 
   margin-top: -50px;
 	transition-duration: 1s;
-	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transition-timing-function: cubic-bezier(0, 1, 0.4, 1);
 }
 
 #hint.closed {
